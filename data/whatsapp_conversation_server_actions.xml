@@ -1,0 +1,21 @@
+<odoo>
+    <record id="action_close_whatsapp_conversation_channel" model="ir.actions.server">
+        <field name="name">Cerrar conversación WhatsApp</field>
+        <field name="model_id" ref="mail.model_discuss_channel"/>
+        <field name="binding_model_id" ref="mail.model_discuss_channel"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">records.action_close_whatsapp_conversation()</field>
+        <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
+    <record id="action_reopen_whatsapp_conversation_channel" model="ir.actions.server">
+        <field name="name">Reabrir conversación WhatsApp</field>
+        <field name="model_id" ref="mail.model_discuss_channel"/>
+        <field name="binding_model_id" ref="mail.model_discuss_channel"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">records.action_reopen_whatsapp_conversation()</field>
+        <field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+</odoo>

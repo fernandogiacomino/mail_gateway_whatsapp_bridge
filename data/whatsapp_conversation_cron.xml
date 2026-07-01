@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_close_stale_whatsapp_conversations" model="ir.cron">
+            <field name="name">Close stale WhatsApp Livechat conversations</field>
+            <field name="model_id" ref="mail.model_discuss_channel"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_close_stale_whatsapp_conversations()</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="ir_cron_delete_closed_whatsapp_conversations" model="ir.cron">
+            <field name="name">Delete closed WhatsApp Livechat conversations</field>
+            <field name="model_id" ref="mail.model_discuss_channel"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_delete_closed_whatsapp_conversations()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

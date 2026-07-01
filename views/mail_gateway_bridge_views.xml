@@ -1,0 +1,36 @@
+<odoo>
+    <!-- Vista del Gateway: Configuración de routing a Live Chat -->
+    <record id="view_mail_gateway_bridge_form" model="ir.ui.view">
+        <field name="name">mail.gateway.bridge.form</field>
+        <field name="model">mail.gateway</field>
+        <field name="inherit_id" ref="mail_gateway.mail_gateway_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <separator string="Live Chat Bridge - WhatsApp ↔ Live Chat"/>
+                <group>
+                    <field name="route_to_livechat" />
+                    <field name="livechat_channel_id" />
+                    <field name="whatsapp_phone_prefix" placeholder="Ej: 9 (para Argentina)"/>
+                    <field name="whatsapp_auto_close_after_minutes"/>
+                    <field name="whatsapp_auto_delete_closed_after_days"/>
+                </group>
+                <div class="alert alert-info" role="alert">
+                    <p>
+                        <strong>Cuando está habilitado Live Chat:</strong>
+                    </p>
+                    <ul>
+                        <li>Los mensajes de WhatsApp se redirigen al canal Live Chat</li>
+                        <li>Los clientes aparecen como guests en Live Chat</li>
+                        <li>Las respuestas del operador/bot se envían de vuelta a WhatsApp</li>
+                        <li>Comunicación bidireccional automática ✓</li>
+                    </ul>
+                    <p>
+                        <strong>Prefijo de país:</strong>
+                        Si WhatsApp añade un prefijo adicional en tu país (ej: Argentina añade '9' después de +54),
+                        configúralo aquí para que la búsqueda de partner funcione correctamente.
+                    </p>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
